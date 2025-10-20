@@ -60,7 +60,7 @@ const Hero = () => {
                         </div>
                         <div className="view-cocktails">
                             <p className="subtitle">Every cocktail on our menu is a blend of premium ingredients, creative flair, and timeless recipes — designed to delight your senses. </p>
-                            <a href="#cocktails">view cocktails</a>
+                            <a href="#cocktails">View cocktails</a>
                         </div>
                     </div>
                 </div>
