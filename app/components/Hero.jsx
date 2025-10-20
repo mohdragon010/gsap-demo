@@ -1,8 +1,8 @@
 "use client"
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
-
+import { ScrollTrigger, SplitText } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Hero = () => {
     useGSAP(() => {
         const heroSplit = new SplitText(".title", {type:"chars words"});
@@ -22,7 +22,23 @@ const Hero = () => {
             ease:"expo.out",
             stagger:0.06,
             delay:1
-        })
+        });
+        
+        // leafs animation
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger:"#hero",
+                start:"top top",
+                end:"bottom top",
+                scrub:true,
+            },
+        }).to(".right-leaf",{
+            y:200,
+
+        }, 0).to(".left-leaf",{
+            y:-200,
+        }, 0)
     },[])
     return(
         <>
